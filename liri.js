@@ -35,7 +35,7 @@ const doIt = () => {
 }
 
 const song = () => {
-    spotify.search({ type: 'track', query: target, limit: 1 }, function (err, data) {
+    spotify.search({ type: 'track', query: (target || "Ace of Base"), limit: 1 }, function (err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
@@ -63,7 +63,7 @@ const concert = () => {
 }
 
 const movie = () => {
-    axios.get("http://www.omdbapi.com/?apikey=trilogy&t=" + target)
+    axios.get("http://www.omdbapi.com/?apikey=trilogy&t=" + (target || "Mr. Nobody"))
         .then(function (response) {
             // handle success
             const drillDown = response.data;
@@ -77,6 +77,10 @@ const movie = () => {
             console.log("Actors: " + drillDown.Actors);
             // if movie-this returns a false response run Mr. Nobody block
             //not sure how to get this section to work
+            if ("Mr. Nobody") {
+                console.log("If you haven't watched Mr. Nobody, then you should: " + drillDown.Website);
+                console.log("It's on Netflix!");
+            }
         })
         .catch(function (error) {
             // handle error
