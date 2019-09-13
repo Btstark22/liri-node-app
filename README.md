@@ -9,7 +9,7 @@ node movie-this I am Legend
 The app will then return all of the basic relevant information of the movie.
   
 Video of how it works:
-![](liri_vid.webm)
+![](liri-node-app/liri_vid.webm)
 
 Deployed app:
 https://btstark22.github.io/liri-node-app/.
